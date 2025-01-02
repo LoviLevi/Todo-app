@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleTools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,26 +11,45 @@ namespace Todo_app
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Todo application - 2025");
+            List<string> list = new List<string>();
+            int valasztas = 0;
 
-            Todo task1 = new Todo(1, "Levinni a szemetet", DateTime.Now, "Le kell vinni a szemetet!") ;
-            ;
-            Console.WriteLine(task1);
-        }
-    }
-    public class Todo
-    {
-        public int Sorszam { get; set; }
-        public string Nev { get; set; }
-        public DateTime Datum { get; set; }
-        public string Leiras { get; set; }
+            while (valasztas != 3)
+            {
+                Console.Clear();
 
-        public Todo(int sorszam, string nev, DateTime datum, string leiras)
-        {
-            Sorszam = sorszam;
-            Nev = nev;
-            Datum = datum;
-            Leiras = leiras;
+                Console.WriteLine("1 - Add to a list");
+                Console.WriteLine("2 - Show all");
+                Console.WriteLine("3- Exit");
+
+                valasztas = int.Parse(Console.ReadLine());
+                if (valasztas == 1)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Írd be a Task-ot");
+                    string task = Console.ReadLine();
+                    list.Add(task);
+
+                    Console.Clear();
+                    Console.WriteLine("Task added...");
+                }
+                else if (valasztas == 2)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Tasks:");
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        Console.WriteLine(list[i]);
+                    }
+                    Console.ReadKey();
+                }
+                else if(valasztas == 3)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Quiting...");
+                    Console.ReadKey();
+                }
+            }
         }
     }
 }
