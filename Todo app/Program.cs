@@ -11,11 +11,15 @@ namespace Todo_app
     {
         static void Main(string[] args)
         {
-            List<string> list = new List<string>();
-            int valasztas = 0;
 
+            List<Task> list = new List<Task>();
+            int valasztas = 0;
+            int id = 1;
+
+            #region v1
             while (valasztas != 3)
             {
+
                 Console.Clear();
 
                 Console.WriteLine("1 - Add to the list");
@@ -26,9 +30,12 @@ namespace Todo_app
                 if (valasztas == 1)
                 {
                     Console.Clear();
-                    Console.WriteLine("Írd be a Task-ot");
-                    string task = Console.ReadLine();
-                    list.Add(task);
+                    Console.WriteLine("Wite down the Task's description:");
+                    string desc = Console.ReadLine();
+                    Console.WriteLine("Wite down the Task's expiring date (MM.DD. format):");
+                    string exp = Console.ReadLine();
+                    Task task1 = new Task(id,desc, exp);
+                    list.Add(task1);
 
                     Console.Clear();
                     Console.WriteLine("Task added...");
@@ -39,17 +46,19 @@ namespace Todo_app
                     Console.WriteLine("Tasks:");
                     for (int i = 0; i < list.Count; i++)
                     {
-                        Console.WriteLine(list[i]);
+                        Console.WriteLine(list[i].Id + ". " + list[i].Description + " - " + list[i].Expiring_time);
                     }
                     Console.ReadKey();
                 }
-                else if(valasztas == 3)
+                else if (valasztas == 3)
                 {
                     Console.Clear();
                     Console.WriteLine("Quiting...");
                     Console.ReadKey();
                 }
             }
+            #endregion
+
         }
     }
 }
