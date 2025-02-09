@@ -18,7 +18,7 @@ namespace Todo_app
             {
                 Console.Clear();
 
-                Console.WriteLine("1 - Add to a list");
+                Console.WriteLine("1 - Add to the list");
                 Console.WriteLine("2 - Show all");
                 Console.WriteLine("3- Exit");
 
