@@ -10,13 +10,16 @@ namespace Todo_app
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public string Expiring_time { get; set; }
+        public int Day { get; set; }
 
-        public Task(int id, string description, string expiring_time)
+        public Task(int id, string description, int day)
         {
             Id = id;
             Description = description;
-            Expiring_time = expiring_time;
+            Day = day;
         }
+        //public string Expiring_time { get; set; }
+
+
     }
 }
