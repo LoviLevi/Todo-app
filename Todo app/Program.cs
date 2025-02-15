@@ -27,40 +27,13 @@ namespace Todo_app
             #region v1
             while (valasztas != 3)
             {
-
                 Console.Clear();
-
-                Console.WriteLine("1 - Add to the list");
-                Console.WriteLine("2 - Show all");
-                Console.WriteLine("3 - Show the weekly list");
-                Console.WriteLine("4 - Exit");
-                Console.WriteLine("5 - Add to a weekly list");
+                Console.WriteLine("1 - Show the weekly list");
+                Console.WriteLine("2 - Add to a weekly list");
+                Console.WriteLine("3 - Exit");
 
                 valasztas = int.Parse(Console.ReadLine());
                 if (valasztas == 1)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Wite down the Task's description:");
-                    string desc = Console.ReadLine();
-                    Console.WriteLine("Wite down the Task's expiring date (MM.DD. format):");
-                    string exp = Console.ReadLine();
-                    //Task task1 = new Task(id,desc, exp);
-                    //list.Add(task1);
-
-                    Console.Clear();
-                    Console.WriteLine("Task added...");
-                }
-                else if (valasztas == 2)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Tasks:");
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        //Console.WriteLine(list[i].Id + ". " + list[i].Description + " - " + list[i].Expiring_time);
-                    }
-                    Console.ReadKey();
-                }
-                else if (valasztas == 3)
                 {
                     Console.Clear();
                     Console.WriteLine("Monday");
@@ -121,13 +94,7 @@ namespace Todo_app
 
                     Console.ReadKey();
                 }
-                else if (valasztas == 4)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Quiting...");
-                    Console.ReadKey();
-                }
-                else if (valasztas == 5)
+                else if (valasztas == 2)
                 {
                     
                     Console.Clear();
@@ -174,12 +141,13 @@ namespace Todo_app
                     {
                         Sundaylist.Add(task);
                     }
-
-                    //Task task1 = new Task(id, desc, exp);
-                    //list.Add(task1);
-
-                    Console.Clear();
                     Console.WriteLine("Task added...");
+                    Console.ReadKey();
+                }
+                else if (valasztas == 3)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Quiting...");
                     Console.ReadKey();
                 }
             }
